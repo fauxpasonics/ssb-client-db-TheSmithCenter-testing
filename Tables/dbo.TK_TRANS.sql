@@ -1,0 +1,65 @@
+CREATE TABLE [dbo].[TK_TRANS]
+(
+[ETLSID] [varchar] (35) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL,
+[SEASON] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL,
+[TRANS_NO] [bigint] NOT NULL,
+[BATCH] [varchar] (16) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[TYPE] [varchar] (200) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[REF] [varchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DATE] [datetime] NULL,
+[DOCUMENT] [varchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CUSTOMER] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[O_AMT] [numeric] (18, 2) NULL,
+[PR_AMT] [numeric] (18, 2) NULL,
+[P_AMT] [numeric] (18, 2) NULL,
+[R_AMT] [numeric] (18, 2) NULL,
+[W_AMT] [numeric] (18, 2) NULL,
+[C_AMT] [numeric] (18, 2) NULL,
+[RR_AMT] [numeric] (18, 2) NULL,
+[P_DATE] [datetime] NULL,
+[PAYMODE] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[BALANCE] [numeric] (18, 2) NULL,
+[TERMINAL_ID] [varchar] (16) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SOURCE] [varchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[E_STAT] [varchar] (500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[XFER_TO_SEASON] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[XFER_TO_TRANS_NO] [bigint] NULL,
+[XFER_FROM_SEASON] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[XFER_FROM_TRANS_NO] [bigint] NULL,
+[EXCH_OUT_SEASON] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[EXCH_OUT_TRANS_NO] [bigint] NULL,
+[EXCH_IN_SEASON] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[EXCH_IN_TRANS_NO] [bigint] NULL,
+[SALECODE] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[CONTROL] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[MP_FROM_SEASON] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[MP_FROM_TRANS_NO] [bigint] NULL,
+[MP_TO_SEASON] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[MP_TO_TRANS_NO] [bigint] NULL,
+[SH_OWNER_SEASON] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[SH_OWNER_TRANS_NO] [bigint] NULL,
+[SH_SELLER_SEASON] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[SH_SELLER_TRANS_NO] [bigint] NULL,
+[LAST_TIME] [datetime] NULL,
+[LAST_USER] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[LAST_DATETIME] [datetime] NULL,
+[ZID] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[SOURCE_ID] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[EXPORT_DATETIME] [datetime] NULL,
+[ETL_Sync_DeltaHashKey] [binary] (32) NULL
+)
+GO
+ALTER TABLE [dbo].[TK_TRANS] ADD CONSTRAINT [PK_TK_TRANS] PRIMARY KEY CLUSTERED  ([ETLSID], [SEASON], [TRANS_NO])
+GO
+CREATE NONCLUSTERED INDEX [IDX_CUSTOMER] ON [dbo].[TK_TRANS] ([CUSTOMER])
+GO
+CREATE NONCLUSTERED INDEX [IDX_DATE] ON [dbo].[TK_TRANS] ([DATE])
+GO
+CREATE NONCLUSTERED INDEX [IDX_SALECODE] ON [dbo].[TK_TRANS] ([SALECODE])
+GO
+CREATE NONCLUSTERED INDEX [IDX_SEASON] ON [dbo].[TK_TRANS] ([SEASON])
+GO
+CREATE NONCLUSTERED INDEX [IDX_TRANS_NO] ON [dbo].[TK_TRANS] ([TRANS_NO])
+GO
+CREATE NONCLUSTERED INDEX [IDX_ZID] ON [dbo].[TK_TRANS] ([ZID])
+GO

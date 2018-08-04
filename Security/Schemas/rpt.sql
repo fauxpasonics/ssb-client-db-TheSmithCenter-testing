@@ -1,0 +1,5 @@
+CREATE SCHEMA [rpt]
+AUTHORIZATION [dbo]
+GO
+GRANT EXECUTE ON SCHEMA:: [rpt] TO [db_svcLogi]
+GO

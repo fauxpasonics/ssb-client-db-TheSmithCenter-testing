@@ -1,0 +1,2 @@
+CREATE USER [svcSSBRP] FOR LOGIN [svcssbrp]
+GO

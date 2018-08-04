@@ -1,0 +1,3 @@
+CREATE SCHEMA [bkp]
+AUTHORIZATION [dbo]
+GO

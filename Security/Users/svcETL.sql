@@ -1,0 +1,2 @@
+CREATE USER [svcETL] FOR LOGIN [svcETL]
+GO

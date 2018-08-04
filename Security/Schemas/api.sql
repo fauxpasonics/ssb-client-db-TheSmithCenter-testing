@@ -1,0 +1,21 @@
+CREATE SCHEMA [api]
+AUTHORIZATION [dbo]
+GO
+GRANT EXECUTE ON SCHEMA:: [api] TO [db_apiETL]
+GO
+GRANT SELECT ON SCHEMA:: [api] TO [db_apiETL]
+GO
+GRANT EXECUTE ON SCHEMA:: [api] TO [db_SSBDeveloper]
+GO
+GRANT SELECT ON SCHEMA:: [api] TO [db_SSBDeveloper]
+GO
+GRANT ALTER ON SCHEMA:: [api] TO [db_SSBDeveloper]
+GO
+GRANT DELETE ON SCHEMA:: [api] TO [db_SSBDeveloper]
+GO
+GRANT INSERT ON SCHEMA:: [api] TO [db_SSBDeveloper]
+GO
+GRANT UPDATE ON SCHEMA:: [api] TO [db_SSBDeveloper]
+GO
+GRANT EXECUTE ON SCHEMA:: [api] TO [db_svcLogi]
+GO

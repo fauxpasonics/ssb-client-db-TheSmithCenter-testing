@@ -1,0 +1,15 @@
+CREATE SCHEMA [ro]
+AUTHORIZATION [dbo]
+GO
+GRANT ALTER ON SCHEMA:: [ro] TO [db_SSBDeveloper]
+GO
+GRANT DELETE ON SCHEMA:: [ro] TO [db_SSBDeveloper]
+GO
+GRANT EXECUTE ON SCHEMA:: [ro] TO [db_SSBDeveloper]
+GO
+GRANT INSERT ON SCHEMA:: [ro] TO [db_SSBDeveloper]
+GO
+GRANT SELECT ON SCHEMA:: [ro] TO [db_SSBDeveloper]
+GO
+GRANT UPDATE ON SCHEMA:: [ro] TO [db_SSBDeveloper]
+GO

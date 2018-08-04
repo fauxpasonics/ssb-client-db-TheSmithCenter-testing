@@ -1,0 +1,17 @@
+CREATE TABLE [dbo].[TK_SSTAT]
+(
+[ETLSID] [varchar] (35) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL,
+[SEASON] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL,
+[SSTAT] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL,
+[NAME] [varchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[STAT_COLOR] [bigint] NULL,
+[LAST_USER] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[LAST_DATETIME] [datetime] NULL,
+[ZID] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[SOURCE_ID] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[EXPORT_DATETIME] [datetime] NULL,
+[ETL_Sync_DeltaHashKey] [binary] (32) NULL
+)
+GO
+ALTER TABLE [dbo].[TK_SSTAT] ADD CONSTRAINT [PK_TK_SSTAT] PRIMARY KEY CLUSTERED  ([ETLSID], [SEASON], [SSTAT])
+GO
